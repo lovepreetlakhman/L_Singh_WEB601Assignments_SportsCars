@@ -1,3 +1,7 @@
+<input type="text" placeholder="Title search" [(ngModel)]="title">
+<button (click)="searchTitle()">Search</button>
+
+<p [style.color]="isTitleThere ? 'green' : 'red' " >{{isTitleThere ? 'Title is there' : 'Title Not there'}} </p>
 
 <div>
     <div *ngFor="let card of cards | contentType" class="cards">

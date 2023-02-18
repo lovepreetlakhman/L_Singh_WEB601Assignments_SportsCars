@@ -8,9 +8,15 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent {
   cards: Content[] = [];
+  title: string = '';
+  isTitleThere: boolean = false;
 
   logID(card: any){
     console.log(`${card.id}, ${card.title}`);
+  }
+
+  searchTitle(){
+    this.isTitleThere = this.cards.some(card => card.title === this.title);
   }
 
   constructor(){
