@@ -6,12 +6,12 @@ import { Content } from './helper-files/content-interface';
 })
 export class ContentTypePipe implements PipeTransform {
 
-  transform(cards: Content[], type: string): Content[] {
+  transform(cards: Content[], type?: string): Content[] {
     if(!type){
       return cards.filter(card => !card.type)
     }
 
-    return cards.filter(card => card.title === type);
+    return cards.filter(card => card.type === type);
   }
 
 }
