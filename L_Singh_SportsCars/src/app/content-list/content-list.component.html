@@ -1,0 +1,8 @@
+
+<div *ngFor="let card of cards" class="cards">
+    <h1>{{card.title}}</h1>
+    <img [src]="card.imgURL" (click)="logID(card)">
+    <p>{{card.description}}</p>
+    <p>{{card.creator}}</p>
+    <p>{{card.type}}</p>
+</div>
