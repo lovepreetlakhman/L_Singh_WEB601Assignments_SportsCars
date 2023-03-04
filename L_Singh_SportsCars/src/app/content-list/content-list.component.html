@@ -17,6 +17,11 @@
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p appHoverAffect="underline">{{card.type}}</p>
+        <p *ngIf="card.tags"><strong>Tags</strong>
+            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                {{tag}},
+            </span>
+        </p>
     </div>
 </div>
 
@@ -32,6 +37,11 @@
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p appHoverAffect="underline">{{card.type}}</p>
+        <p *ngIf="card.tags"><strong>Tags</strong>
+            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                {{tag}},
+            </span>
+        </p>
     </div>
 </div>
 
@@ -47,5 +57,10 @@
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p appHoverAffect="underline">{{card.type}}</p>
+        <p *ngIf="card.tags"><strong>Tags</strong>
+            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                {{tag}},
+            </span>
+        </p>
     </div>
 </div>
