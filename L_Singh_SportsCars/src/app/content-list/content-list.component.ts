@@ -42,7 +42,7 @@ export class ContentListComponent {
         description: "Engines and drivetrains carried over from the Mustang II including the 2.3 L I4, 2.8 L V6, and 4.9 L V8 engines. A troublesome 2.3 L turbocharged I4 was available during initial production startup and then reappeared after undergoing improvements for the mid-year introduction of the 1983 turbo GT. The 2.8 L V6, in short supply, was replaced with a 3.3 L I6 engine during the 1979-model year.",
         creator: "Ford Motors",
         
-        type: "supercharged supersport"
+        type: "Super Sport"
       },
       {
         id: 3,
