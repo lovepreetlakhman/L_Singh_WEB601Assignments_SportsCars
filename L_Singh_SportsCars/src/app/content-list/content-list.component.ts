@@ -10,6 +10,7 @@ export class ContentListComponent {
   cards: Content[] = [];
   title: string = '';
   isTitleThere: boolean = false;
+  defaultcar: string = "https://images.unsplash.com/photo-1587494933712-aaafb50f63d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 
   logID(card: any){
     console.log(`${card.id}, ${card.title}`);
@@ -32,7 +33,7 @@ export class ContentListComponent {
         title: "Chevrolet Camaro ZL1",
         description: "According to the book The Complete Book of Camaro: Every Model Since 1967, the name Camaro was conceived by Chevrolet merchandising manager Bob Lund and General Motors vice president Ed Rollett, while they were reading the book Heath's French and English Dictionary by James Boïelle and by de V. Payen-Payne printed in 1936.",
         creator: "General Motors",
-        imgURL: "https://images.unsplash.com/photo-1615769516664-ca7302760b23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        
         type: "Super Sport"
       },
       {
@@ -40,7 +41,7 @@ export class ContentListComponent {
         title: "Ford Mustang GT",
         description: "Engines and drivetrains carried over from the Mustang II including the 2.3 L I4, 2.8 L V6, and 4.9 L V8 engines. A troublesome 2.3 L turbocharged I4 was available during initial production startup and then reappeared after undergoing improvements for the mid-year introduction of the 1983 turbo GT. The 2.8 L V6, in short supply, was replaced with a 3.3 L I6 engine during the 1979-model year.",
         creator: "Ford Motors",
-        imgURL: "https://images.unsplash.com/photo-1547744152-14d985cb937f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        
         type: "supercharged supersport"
       },
       {

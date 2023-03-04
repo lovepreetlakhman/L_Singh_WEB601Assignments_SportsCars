@@ -6,29 +6,44 @@
 <div>
     <div *ngFor="let card of cards | contentType" class="cards">
         <h1>{{card.title}}</h1>
-        <img [src]="card.imgURL" (click)="logID(card)">
+
+        <div *ngIf="card.imgURL; else noImage">
+            <img [src]="card.imgURL" (click)="logID(card)">
+        </div>
+        <ng-template #noImage>
+            <img [src]="defaultcar" (click)="logID(card)">
+        </ng-template>
+
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p>{{card.type}}</p>
     </div>
 </div>
-
 
 <div>
     <div *ngFor="let card of cards | contentType:'Super Sport'" class="cards sSport">
         <h1>{{card.title}}</h1>
-        <img [src]="card.imgURL" (click)="logID(card)">
+        <div *ngIf="card.imgURL; else noImage">
+            <img [src]="card.imgURL" (click)="logID(card)">
+        </div>
+        <ng-template #noImage>
+            <img [src]="defaultcar" (click)="logID(card)">
+        </ng-template>
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p>{{card.type}}</p>
     </div>
 </div>
 
-
 <div>
     <div *ngFor="let card of cards | contentType:'sedan'" class="cards sedan">
         <h1>{{card.title}}</h1>
-        <img [src]="card.imgURL" (click)="logID(card)">
+        <div *ngIf="card.imgURL; else noImage">
+            <img [src]="card.imgURL" (click)="logID(card)">
+        </div>
+        <ng-template #noImage>
+            <img [src]="defaultcar" (click)="logID(card)">
+        </ng-template>
         <p>{{card.description}}</p>
         <p>{{card.creator}}</p>
         <p>{{card.type}}</p>
