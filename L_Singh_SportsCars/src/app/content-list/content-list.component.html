@@ -1,3 +1,7 @@
+<app-create-content (onCreation)="addCard($event)"></app-create-content> 
+
+<p style="color: red;" *ngIf="errTxt">Card failed to add</p>
+
 <input type="text" placeholder="Title search" [(ngModel)]="title">
 <button (click)="searchTitle()">Search</button>
 

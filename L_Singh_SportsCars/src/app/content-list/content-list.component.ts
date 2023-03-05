@@ -10,15 +10,32 @@ export class ContentListComponent {
   cards: Content[] = [];
   title: string = '';
   isTitleThere: boolean = false;
-  defaultcar: string = "https://images.unsplash.com/photo-1587494933712-aaafb50f63d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+  defaultcar: string = "https://images.unsplash.com/photo-1587494933712-aaafb50f63d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80";
+  errTxt: boolean = false;
 
   logID(card: any){
     console.log(`${card.id}, ${card.title}`);
+    
   }
 
   searchTitle(){
     this.isTitleThere = this.cards.some(card => card.title === this.title);
   }
+
+  addCard(newContent: Content){
+    const AddPromise = new Promise((resolve, reject) =>{
+      this.cards.push(newContent);
+      this.cards = [...this.cards];
+      resolve(newContent.title);
+    });
+
+    AddPromise.then(data => {
+      console.log(`Content Added Successfully With Title:  ${data}`);
+      this.errTxt = false;
+    }) .catch(err => {
+      this.errTxt = true;
+    });
+    }
 
   constructor(){
     this.cards = [
