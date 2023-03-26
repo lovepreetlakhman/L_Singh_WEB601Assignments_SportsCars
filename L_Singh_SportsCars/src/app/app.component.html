@@ -1,1 +1,24 @@
+<div class="cards">
+    <h1>{{topContent.title}}</h1>
+
+    <div *ngIf="topContent.imgURL; else noImage">
+        <img [src]="topContent.imgURL" (click)="logID(topContent)">
+    </div>
+    <ng-template #noImage>
+        <img [src]="defaultcar" (click)="logID(topContent)">
+    </ng-template>
+
+    <p>{{topContent.description}}</p>
+    <p>{{topContent.creator}}</p>
+    <p appHoverAffect="underline">{{topContent.type}}</p>
+    <p *ngIf="topContent.tags"><strong>Tags</strong>
+        <span *ngFor="let tag of topContent.tags" appHoverAffect="bold">
+            {{tag}},
+        </span>
+    </p>
+</div>
+<br>
 <app-content-list></app-content-list>
+<br>
+<app-messages></app-messages>
+<br>
