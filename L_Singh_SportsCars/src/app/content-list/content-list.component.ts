@@ -26,4 +26,10 @@ export class ContentListComponent {
   ngOnInit(){
     this.SportsCarsService.getContent().subscribe(cards => this.cards = cards);
   }
+  addonCreation(newCar: Content){
+    this.SportsCarsService.addCars(newCar).subscribe(newCarFromServer => {
+      this.cards.push(newCarFromServer);
+      this.cards = [...this.cards];
+    });
+  }
 }
