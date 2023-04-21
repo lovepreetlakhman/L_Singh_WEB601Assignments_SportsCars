@@ -12,6 +12,15 @@ import { ContentTypePipe } from './content-type.pipe';
 import { HoverAffectDirective } from './hover-affect.directive';
 import { MessagesComponent } from './messages/messages.component';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 
 @NgModule({
   declarations: [
@@ -21,17 +30,25 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     ContentTypePipe,
     HoverAffectDirective,
     MessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    AddContentDialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatIconModule,
+    MatCardModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 1000
 
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

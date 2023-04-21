@@ -1,14 +1,2 @@
-
-<div>
-    
-    Title: <br> <input type="text" [(ngModel)]="newCard.title"> <br> <br>
-    Description: <br> <input type="text" [(ngModel)]="newCard.description"> <br> <br>
-    Creator: <br> <input type="text" [(ngModel)]="newCard.creator"> <br> <br>
-    Image Link: <br> <input type="text" [(ngModel)]="newCard.imgURL"> <br> <br>
-    Type: <br> <input type="text" [(ngModel)]="newCard.type"> <br> <br>
-
-    <div>
-        <button (click)="addCard()">Add Content</button>        
-    </div>
-
-</div>
+<br> <button mat-raised-button color="primary" (click)="openDialog()">Add New Content</button> <br> <br>
+<mat-divider></mat-divider>

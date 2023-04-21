@@ -1,67 +1,83 @@
 <app-modify-content (onCreation)="addonCreation($event)"></app-modify-content>
-<input type="text" placeholder="Title search" [(ngModel)]="title">
-<button (click)="searchTitle()">Search</button>
+<mat-form-field>
+<input matInput type="text" placeholder="Title search" [(ngModel)]="title">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="searchTitle()">Search</button>
 
 <p [style.color]="isTitleThere ? 'green' : 'red' " >{{isTitleThere ? 'Title is there' : 'Title Not there'}} </p>
 
 <div>
-    <div *ngFor="let card of cards | contentType" class="cards">
-        <h1>{{card.title}}</h1>
+    <mat-card *ngFor="let card of cards | contentType" class="cards">
+        <mat-card-header>
+            <h1>{{card.title}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="card.imgURL; else noImage">
+                <img [src]="card.imgURL" (click)="logID(card)">
+            </div>
+            <ng-template #noImage>
+                <img [src]="defaultcar" (click)="logID(card)">
+            </ng-template>
+    
+            <p>{{card.description}}</p>
+            <p>{{card.creator}}</p>
+            <p appHoverAffect="underline">{{card.type}}</p>
+            <p *ngIf="card.tags"><strong>Tags</strong>
+                <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                    {{tag}},
+                </span>
+            </p>
+        </mat-card-content>
 
-        <div *ngIf="card.imgURL; else noImage">
-            <img [src]="card.imgURL" (click)="logID(card)">
-        </div>
-        <ng-template #noImage>
-            <img [src]="defaultcar" (click)="logID(card)">
-        </ng-template>
-
-        <p>{{card.description}}</p>
-        <p>{{card.creator}}</p>
-        <p appHoverAffect="underline">{{card.type}}</p>
-        <p *ngIf="card.tags"><strong>Tags</strong>
-            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
-                {{tag}},
-            </span>
-        </p>
-    </div>
+    </mat-card>
 </div>
 
 <div>
-    <div *ngFor="let card of cards | contentType:'Super Sport'" class="cards sSport">
-        <h1>{{card.title}}</h1>
-        <div *ngIf="card.imgURL; else noImage">
-            <img [src]="card.imgURL" (click)="logID(card)">
-        </div>
-        <ng-template #noImage>
-            <img [src]="defaultcar" (click)="logID(card)">
-        </ng-template>
-        <p>{{card.description}}</p>
-        <p>{{card.creator}}</p>
-        <p appHoverAffect="underline">{{card.type}}</p>
-        <p *ngIf="card.tags"><strong>Tags</strong>
-            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
-                {{tag}},
-            </span>
-        </p>
-    </div>
+    <mat-card *ngFor="let card of cards | contentType:'Super Sport'" class="cards sSport">
+        <mat-card-header>
+            <h1>{{card.title}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="card.imgURL; else noImage">
+                <img [src]="card.imgURL" (click)="logID(card)">
+            </div>
+            <ng-template #noImage>
+                <img [src]="defaultcar" (click)="logID(card)">
+            </ng-template>
+    
+            <p>{{card.description}}</p>
+            <p>{{card.creator}}</p>
+            <p appHoverAffect="underline">{{card.type}}</p>
+            <p *ngIf="card.tags"><strong>Tags</strong>
+                <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                    {{tag}},
+                </span>
+            </p>
+        </mat-card-content>
+    </mat-card>
 </div>
 
 <div>
-    <div *ngFor="let card of cards | contentType:'sedan'" class="cards sedan">
-        <h1>{{card.title}}</h1>
-        <div *ngIf="card.imgURL; else noImage">
-            <img [src]="card.imgURL" (click)="logID(card)">
-        </div>
-        <ng-template #noImage>
-            <img [src]="defaultcar" (click)="logID(card)">
-        </ng-template>
-        <p>{{card.description}}</p>
-        <p>{{card.creator}}</p>
-        <p appHoverAffect="underline">{{card.type}}</p>
-        <p *ngIf="card.tags"><strong>Tags</strong>
-            <span *ngFor="let tag of card.tags" appHoverAffect="bold">
-                {{tag}},
-            </span>
-        </p>
-    </div>
+    <mat-card *ngFor="let card of cards | contentType:'sedan'" class="cards sedan">
+        <mat-card-header>
+            <h1>{{card.title}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="card.imgURL; else noImage">
+                <img [src]="card.imgURL" (click)="logID(card)">
+            </div>
+            <ng-template #noImage>
+                <img [src]="defaultcar" (click)="logID(card)">
+            </ng-template>
+    
+            <p>{{card.description}}</p>
+            <p>{{card.creator}}</p>
+            <p appHoverAffect="underline">{{card.type}}</p>
+            <p *ngIf="card.tags"><strong>Tags</strong>
+                <span *ngFor="let tag of card.tags" appHoverAffect="bold">
+                    {{tag}},
+                </span>
+            </p>
+        </mat-card-content>
+    </mat-card>
 </div>

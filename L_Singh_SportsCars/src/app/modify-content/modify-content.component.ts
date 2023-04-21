@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { AddContentDialogComponent } from '../add-content-dialog/add-content-dialog.component';
 
 @Component({
   selector: 'app-modify-content',
@@ -7,6 +9,7 @@ import { Content } from '../helper-files/content-interface';
   styleUrls: ['./modify-content.component.scss']
 })
 export class ModifyContentComponent {
+  
 
 
   newCard: any = {};
@@ -16,5 +19,15 @@ export class ModifyContentComponent {
   this.onCreation.emit(this.newCard);
   this.newCard = {};
  }
- constructor(){}
+ constructor(public dialog:MatDialog){}
+ 
+ openDialog():void{
+  const dialogRef = this.dialog.open(AddContentDialogComponent);
+  dialogRef.afterClosed().subscribe(result => {
+    if (result){
+      this.newCard = result;
+      this.addCard();
+    }
+  });
+}
 }
