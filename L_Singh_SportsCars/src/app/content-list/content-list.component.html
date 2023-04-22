@@ -9,7 +9,10 @@
 <div>
     <mat-card *ngFor="let card of cards | contentType" class="cards">
         <mat-card-header>
-            <h1>{{card.title}}</h1>
+            <a routerLink="/contents/{{card.id}}">
+
+                <h1>{{card.title}}</h1>
+            </a>
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="card.imgURL; else noImage">
@@ -35,7 +38,10 @@
 <div>
     <mat-card *ngFor="let card of cards | contentType:'Super Sport'" class="cards sSport">
         <mat-card-header>
-            <h1>{{card.title}}</h1>
+            <a routerLink="/contents/{{card.id}}">
+
+                <h1>{{card.title}}</h1>
+            </a>
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="card.imgURL; else noImage">
@@ -60,7 +66,10 @@
 <div>
     <mat-card *ngFor="let card of cards | contentType:'sedan'" class="cards sedan">
         <mat-card-header>
-            <h1>{{card.title}}</h1>
+            <a routerLink="/contents/{{card.id}}">
+
+                <h1>{{card.title}}</h1>
+            </a>
         </mat-card-header>
         <mat-card-content>
             <div *ngIf="card.imgURL; else noImage">
